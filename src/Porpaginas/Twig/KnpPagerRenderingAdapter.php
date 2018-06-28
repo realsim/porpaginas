@@ -22,7 +22,8 @@ class KnpPagerRenderingAdapter implements RenderingAdapter
      */
     public function renderPagination(Page $page, Twig_Environment $environment)
     {
-        return $environment->getExtension('knp_pagination')->render(
+        return $environment->getExtension('Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension')->render(
+            $environment,
             $this->paginator->paginate(
                 $page,
                 $page->getCurrentPage(),
